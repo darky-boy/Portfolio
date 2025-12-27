@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'JetBrains Mono', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #000000;
+  overflow: hidden;
+}
+
+.font-pixel {
+  font-family: 'Press Start 2P', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.cursor-blink {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Progress bar animation */
+.animate-progress {
+  animation: progress 2s ease-in-out;
+}
+
+@keyframes progress {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+/* Typing animation for transition */
+.animate-typing {
+  animation: typing 2s steps(40, end);
+}
+
+@keyframes typing {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+/* Fade in animation for Hero */
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Dinosaur running animation */
+.animate-dino-run {
+  animation: dinoRun 0.5s infinite alternate;
+}
+
+@keyframes dinoRun {
+  0% { transform: translateX(0) rotate(0deg); }
+  100% { transform: translateX(10px) rotate(2deg); }
+}
+
+/* Moving diagonal pattern animation */
+.group:hover {
+  animation: movePattern 2s linear infinite;
+}
+
+@keyframes movePattern {
+  0% { background-position: 0px 0px; }
+  100% { background-position: 8px 8px; }
+}
+
+/* Hide scrollbar for overflow-y-auto elements */
+.overflow-y-auto {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.overflow-y-auto::-webkit-scrollbar {
+  display: none; /* WebKit browsers */
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Performance optimizations for projects */
+.hover\:scale-102:hover {
+  transform: scale(1.02);
+}
+
+/* Reduce animation complexity for better performance */
+.animate-bounce {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
